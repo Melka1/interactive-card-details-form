@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  width: 1440px;
+  min-width: 1000px;
+  height: 780px;
+}
+main .card, main .form {
+  height: 100%;
+}
+main .card {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 75px;
+  padding: 30px;
+  align-items: center;
+}
+main .form {
+  width: 65%;
+}
+main .card {
+  background: url("./images/bg-main-desktop.png");
+  background-size: cover;
+}
+main .card .front, main .card .back {
+  position: relative;
+  display: flex;
+}
+main .card img {
+  width: 400px;
+}
+main .card .front {
+  top: 25px;
+  left: 35%;
+  color: white;
+}
+main .card .front .front-name {
+  position: absolute;
+  top: 75%;
+  left: 7%;
+}
+main .card .front .card--id {
+  position: absolute;
+  top: 55%;
+  left: 7%;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+main .card .front .exp--date {
+  position: absolute;
+  top: 78%;
+  font-size: 0.9rem;
+  left: 80%;
+}
+main .card .front .logo {
+  width: 20%;
+  position: absolute;
+  top: 10%;
+  left: 8%;
+}
+main .card .back {
+  top: -25px;
+  left: 60%;
+}
+main .card .back .card--number {
+  position: absolute;
+  top: 34%;
+  left: 78%;
+  font-size: 1.2rem;
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
