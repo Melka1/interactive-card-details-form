@@ -42,18 +42,31 @@ main .form {
   align-items: center;
 }
 main .form form {
-  border: 1px solid;
   width: 400px;
+  margin-left: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, 1fr);
-  gap: 2px;
+  gap: 15px;
 }
 main .form form label, main .form form input {
   display: block;
-  border: 1px solid;
   width: 100%;
   padding: 7px;
+  margin-bottom: 2px;
+  font-family: "Space Grotesk", sans-serif;
+}
+main .form form label {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding-left: 0;
+}
+main .form form input {
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding-left: 20px;
+  border: 2px solid hsl(270deg, 3%, 87%);
+  color: hsl(270deg, 3%, 87%);
 }
 main .form form .cardholder--name {
   grid-column: 1/-1;
@@ -61,12 +74,24 @@ main .form form .cardholder--name {
 main .form form .card--number {
   grid-column: 1/-1;
 }
-main .form form .expiry-mon-year {
+main .form form .exp-month-year {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+main .form form .exp-month-year input {
+  width: 100%;
+  text-align: center;
 }
 main .form form button {
   grid-column: 1/-1;
+  margin-top: 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 400;
 }
 main .card {
   background: url("./images/bg-main-desktop.png");
@@ -118,4 +143,17 @@ main .card .back .card--number {
   left: 78%;
   font-size: 1.2rem;
   color: white;
+}
+
+#card--holder:hover {
+  cursor: pointer;
+}
+
+#card--holder:focus, #card--number:focus, #month:focus, #year:focus, #cvc:focus {
+  outline: none;
+  border-left: 2px solid hsl(249deg, 99%, 64%);
+  border-right: 2px solid hsl(278deg, 94%, 30%);
+  border-top: 2px solid hsl(249deg, 99%, 64%);
+  border-bottom: 2px solid hsl(278deg, 94%, 30%);
+  color: black;
 }/*# sourceMappingURL=styles.css.map */
