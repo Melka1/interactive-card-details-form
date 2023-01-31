@@ -21,9 +21,9 @@ button:hover {
 main {
   display: flex;
   flex-direction: row;
-  width: 1440px;
+  width: 100vw;
   min-width: 1000px;
-  height: 780px;
+  height: 100vh;
 }
 main .card, main .form {
   height: 100%;
@@ -177,7 +177,7 @@ main .card .back .cvc--number {
 }
 
 #thanks {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 20px;
   align-items: center;
@@ -204,9 +204,14 @@ main .card .back .cvc--number {
 
 footer {
   padding: 20px;
+  display: none;
 }
 
 @media screen and (width <= 375px) {
+  body {
+    font-size: 14px;
+    justify-content: flex-start;
+  }
   main {
     width: 100vw;
     min-width: unset;
@@ -235,7 +240,7 @@ footer {
   main .form {
     padding: 20px;
     width: 100%;
-    padding-top: 75px;
+    padding-top: 90px;
   }
   main .form #form {
     width: unset;
@@ -246,5 +251,9 @@ footer {
   }
   main .form #form input {
     font-size: 1.1rem;
+  }
+  main #thanks {
+    margin-left: 0;
+    margin-bottom: 50px;
   }
 }/*# sourceMappingURL=styles.css.map */

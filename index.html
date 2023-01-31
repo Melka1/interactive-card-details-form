@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="./styles.css">
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <style>
-    .attribution { font-size: 1rem; text-align: center;}
+    .attribution { font-size: 1rem; text-align: center;display: none;}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
   <main>
-    <div class="card">
+    <div class="card" >
       <div class="front">
         <img src="./images/bg-card-front.png" alt="bg-card-front">
         <p class="front-name">Jane Appleseed</p>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="form">
-      <form id="form" >
+      <form id="form">
         <div class="cardholder--name parent">
           <label for="card--holder">CARDHOLDER NAME</label>
           <input type="text" id="card--holder" name="cardholder--name" placeholder="e.g. Jane Appleseed" oninput="handleChange('card--holder', 'front-name')" onchange="handleSubmit('name')">
@@ -62,7 +62,7 @@
         </div>
         <button type="submit">Confirm</button>
       </form>
-      <div class="thanks" id="thanks" style="display: none;">
+      <div class="thanks" id="thanks">
         <img src="./images/icon-complete.svg" alt="icon-complete">
         <h1>THANK YOU!</h1>
         <p>We've added your card details</p>

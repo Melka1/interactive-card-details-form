@@ -36,7 +36,7 @@ var my_func = function(event) {
         }
         return
     } else if(getName&&getNumber&&getMonth&&getYear&&getCvc){
-        $("#form").hide()
+        $("#form").css("display", "none")
         $("#thanks").css("display", "flex")
     }
 

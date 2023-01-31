@@ -27,9 +27,9 @@ button:hover {
 main {
     display: flex;
     flex-direction: row;
-    width: 1440px;
+    width: 100vw;
     min-width: 1000px;
-    height: 780px;
+    height: 100vh;
     .card, .form {
         height: 100%;
     }
@@ -183,7 +183,7 @@ main {
 }
 
 #thanks {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 20px;
     align-items: center;
@@ -210,9 +210,14 @@ main {
 
 footer {
     padding: 20px;
+    display: none;
 }
 
 @media screen and (width<=375px){
+    body {
+        font-size: 14px;
+        justify-content: flex-start;
+    }
     main {
         width: 100vw;
         min-width: unset;
@@ -240,7 +245,7 @@ footer {
         .form {
             padding: 20px;
             width: 100%;
-            padding-top: 75px;
+            padding-top: 90px;
             #form {
                 width:unset;
                 margin-left: 0;
@@ -251,6 +256,10 @@ footer {
                     font-size: 1.1rem;
                 }
             }
+        } 
+        #thanks {
+            margin-left: 0;
+            margin-bottom: 50px;
         }
     }
 
