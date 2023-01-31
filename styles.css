@@ -14,8 +14,11 @@ body {
   min-height: 100vh;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 main {
-  border: 1px solid;
   display: flex;
   flex-direction: row;
   width: 1440px;
@@ -67,6 +70,7 @@ main .form form input {
   padding-left: 20px;
   border: 2px solid hsl(270deg, 3%, 87%);
   color: hsl(270deg, 3%, 87%);
+  position: relative;
 }
 main .form form .cardholder--name {
   grid-column: 1/-1;
@@ -137,7 +141,7 @@ main .card .back {
   top: -25px;
   left: 60%;
 }
-main .card .back .card--number {
+main .card .back .cvc--number {
   position: absolute;
   top: 34%;
   left: 78%;
@@ -145,7 +149,7 @@ main .card .back .card--number {
   color: white;
 }
 
-#card--holder:hover {
+#card--holder:hover, #card--number:hover, #month:hover, #year:hover, #cvc:hover {
   cursor: pointer;
 }
 
@@ -156,4 +160,91 @@ main .card .back .card--number {
   border-top: 2px solid hsl(249deg, 99%, 64%);
   border-bottom: 2px solid hsl(278deg, 94%, 30%);
   color: black;
+}
+
+.error {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  font-size: 0.8rem;
+  padding: 2px;
+  color: hsl(0deg, 100%, 66%);
+}
+
+.parent {
+  position: relative;
+}
+
+#thanks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-left: 100px;
+}
+#thanks h1 {
+  margin-bottom: 0;
+}
+#thanks p {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+#thanks button {
+  width: 120%;
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: hsl(278deg, 68%, 11%);
+  color: white;
+  border: none;
+}
+
+footer {
+  padding: 20px;
+}
+
+@media screen and (width <= 375px) {
+  main {
+    width: 100vw;
+    min-width: unset;
+    flex-direction: column;
+    height: unset;
+  }
+  main .card {
+    background-image: url("./images/bg-main-mobile.png");
+    position: relative;
+    height: 250px;
+    width: 100%;
+  }
+  main .card .front, main .card .back {
+    position: absolute;
+    transform: scale(0.65);
+  }
+  main .card .front {
+    z-index: 1;
+    top: 100px;
+    left: -10%;
+  }
+  main .card .back {
+    top: 10px;
+    left: 0%;
+  }
+  main .form {
+    padding: 20px;
+    width: 100%;
+    padding-top: 75px;
+  }
+  main .form #form {
+    width: unset;
+    margin-left: 0;
+  }
+  main .form #form label {
+    font-size: 0.8rem;
+  }
+  main .form #form input {
+    font-size: 1.1rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

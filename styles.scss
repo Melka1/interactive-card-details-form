@@ -20,17 +20,18 @@ body {
     min-height: 100vh;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 main {
-    border: 1px solid;
     display: flex;
     flex-direction: row;
-    // width: 100vw;
     width: 1440px;
     min-width: 1000px;
     height: 780px;
     .card, .form {
         height: 100%;
-        // border: 1px solid;
     }
     .card {
         width: 35%;
@@ -73,6 +74,7 @@ main {
                 padding-left: 20px;
                 border: 2px solid $Light-grayish-violet;
                 color: $Light-grayish-violet;
+                position: relative;
             }
             .cardholder--name {
                 grid-column: 1/-1;
@@ -102,7 +104,6 @@ main {
         }
     }
     .card {
-        //background: linear-gradient(-45deg, hsl(278, 68%, 11%) 45%, hsl(247, 53%, 49%) 68%, hsl(278, 68%, 11%) 87%);
         background: url("./images/bg-main-desktop.png");
         background-size: cover;
         .front, .back {
@@ -145,7 +146,7 @@ main {
         .back {
             top: -25px;
             left: 60%;
-            .card--number {
+            .cvc--number {
                 position: absolute;
                 top: 34%;
                 left: 78%;
@@ -156,14 +157,101 @@ main {
     }
 }
 
-#card--holder:hover {
+#card--holder:hover, #card--number:hover, #month:hover, #year:hover, #cvc:hover {
     cursor: pointer;
 }
-#card--holder:focus, #card--number:focus, #month:focus, #year:focus, #cvc:focus{
+#card--holder:focus, #card--number:focus, #month:focus, #year:focus, #cvc:focus {
     outline: none;
     border-left: 2px solid hsl(249, 99%, 64%);
     border-right: 2px solid hsl(278, 94%, 30%);
     border-top: 2px solid hsl(249, 99%, 64%);
     border-bottom:2px solid hsl(278, 94%, 30%);
     color: black;
+}
+
+.error {
+    display:none;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    font-size: 0.8rem;
+    padding: 2px;
+    color: hsl(0, 100%, 66%);
+}
+.parent {
+    position: relative;
+}
+
+#thanks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-left: 100px;
+    h1{
+        margin-bottom: 0;
+    }
+    p {
+        margin: 0;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+    button {
+        width: 120%;
+        font-size: 1.2rem;
+        padding: 15px;
+        border-radius: 10px;
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: $Very-dark-violet;
+        color: white;
+        border: none;
+    }
+}
+
+footer {
+    padding: 20px;
+}
+
+@media screen and (width<=375px){
+    main {
+        width: 100vw;
+        min-width: unset;
+        flex-direction: column;
+        height: unset;
+        .card {
+            background-image: url("./images/bg-main-mobile.png");
+            position: relative;
+            height: 250px;
+            width: 100%;
+            .front, .back {
+                position: absolute;
+                transform: scale(0.65);
+            }
+            .front {
+                z-index: 1;
+                top: 100px;
+                left: -10%;
+            }
+            .back {
+                top: 10px;
+                left: 0%;
+            }
+        }
+        .form {
+            padding: 20px;
+            width: 100%;
+            padding-top: 75px;
+            #form {
+                width:unset;
+                margin-left: 0;
+                label {
+                    font-size: 0.8rem;
+                }
+                input {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
 }

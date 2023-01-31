@@ -9,8 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Interactive card details form</title>
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <style>
-    .attribution { font-size: 11px; text-align: center; display: none;}
+    .attribution { font-size: 1rem; text-align: center;}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
@@ -26,38 +27,53 @@
       </div>
       <div class="back">
         <img src="./images/bg-card-back.png" alt="bg-card-back">
-        <p class="card--number">000</p>
+        <p class="cvc--number">000</p>
       </div>
     </div>
     <div class="form">
-      <form action="#" onsubmit="">
-        <div class="cardholder--name">
+      <form id="form" >
+        <div class="cardholder--name parent">
           <label for="card--holder">CARDHOLDER NAME</label>
-          <input type="text" id="card--holder" name="cardholder--name" placeholder="e.g. Jane Appleseed">
+          <input type="text" id="card--holder" name="cardholder--name" placeholder="e.g. Jane Appleseed" oninput="handleChange('card--holder', 'front-name')" onchange="handleSubmit('name')">
+          <p id="error--name" class="error"></p>
         </div>
-        <div class="card--number">
+        <div class="card--number parent">
           <label for="card--number">CARD NUMBER</label>
-          <input type="text" name="card--number" id="card--number" placeholder="e.g. 1234 5678 9123 0000">
+          <input type="text" name="card--number" id="card--number" placeholder="e.g. 1234 5678 9123 0000" oninput="handleChange('card--number', 'card--id')" maxlength="19" onchange="handleSubmit('number')">
+          <p id="error--number" class="error"></p>
         </div>
         <div class="expiry-mon-year">
           <label for="month-year">EXP. DATE (MM/YY)</label>
           <div class="exp-month-year" id="month-year">
-            <input type="number" name="month" id="month" min="1" max="12" placeholder="MM">
-            <input type="number" name="year" id="year" min="2000" max="2023" placeholder="YY">
+            <div class="parent">
+              <input type="number" name="month" id="month" placeholder="MM" onchange="handleSubmit('month')" >
+              <p id="error--month" class="error"></p>
+            </div>
+            <div class="parent">
+              <input type="number" name="year" id="year" placeholder="YY" onchange="handleSubmit('year')">
+              <p id="error--year" class="error">Cannot be black!</p>
+            </div>
           </div>
         </div>
-        <div class="cvc">
+        <div class="cvc parent">
           <label for="cvc">CVC</label>
-          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123">
+          <input type="number" name="cvc" id="cvc" placeholder="e.g. 123" onchange="handleSubmit('cvc')">
+          <p id="error--cvc" class="error">Cannot be black!</p>
         </div>
         <button type="submit">Confirm</button>
       </form>
+      <div class="thanks" id="thanks" style="display: none;">
+        <img src="./images/icon-complete.svg" alt="icon-complete">
+        <h1>THANK YOU!</h1>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </div>  
     </div>
   </main>
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">melka1</a>.
     </div>
   </footer>
   <script src="./scripts.js"></script>
