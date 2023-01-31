@@ -210,7 +210,9 @@ main {
 
 footer {
     padding: 20px;
-    display: none;
+    position: fixed;
+    bottom: -15px;
+    // display: none;
 }
 
 @media screen and (width<=375px){
@@ -261,6 +263,9 @@ footer {
             margin-left: 0;
             margin-bottom: 50px;
         }
+    }
+    footer div{
+        font-size: 0.8rem;
     }
 
 }
